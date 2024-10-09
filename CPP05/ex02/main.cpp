@@ -6,12 +6,14 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:55:19 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/09 11:01:56 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/09 11:54:46 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include "Colors.hpp"
 
 int main()
@@ -23,9 +25,9 @@ int main()
         Bureaucrat lmicheli("lmicheli", 100);
         Bureaucrat gduranti("gduranti", 150);
 
-        AForm formA("FormA", 75, 50);
-        AForm formB("FormB", 50, 25);
-        AForm formC("FormC", 25, 10);
+		PresidentialPardonForm formA("formA");
+		RobotomyRequestForm formB("formB");
+		ShrubberyCreationForm formC("formC");
 
 		std::cout << CYAN << sgarigli << RESET;
 		std::cout << CYAN << mruggier << RESET;

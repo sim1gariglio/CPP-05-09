@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:05:28 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/09 11:25:24 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/09 11:58:55 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 # include "Bureaucrat.hpp"
+# include "Colors.hpp"
 
 class AForm
 {
@@ -45,12 +46,14 @@ class AForm
 		AForm(std::string name, int gradeToSign, int gradeToExecute);
 		AForm(AForm const & src);
 		AForm &operator=(AForm const & rhs);
-		~AForm();
+		virtual ~AForm();
 		std::string getName() const;
 		bool getSigned() const;
 		int getGradeToSign() const;
 		int getGradeToExecute() const;
 		void beSigned(Bureaucrat &bureaucrat);
+		
+		virtual void execute(Bureaucrat const & executor) const;
 };
 std::ostream &operator<<(std::ostream &o, AForm const &rhs);
 

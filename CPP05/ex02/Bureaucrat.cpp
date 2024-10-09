@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:22:55 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/09 11:01:09 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/09 11:41:30 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,17 @@ void Bureaucrat::signForm(AForm &form)
 		std::cout << RED << *this << "cannot sign " << form << "because " << e.what() << RESET << std::endl << std::endl;
 	}
 	
+}
+
+void Bureaucrat::executeForm(AForm const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << GREEN << *this << "executed " << form << RESET << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << RED << *this << "cannot execute " << form << "because " << e.what() << RESET << std::endl << std::endl;
+	}
 }
