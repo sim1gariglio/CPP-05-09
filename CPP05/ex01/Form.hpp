@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:52:25 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/09 11:19:55 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/09 11:25:18 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ class Form
 		int getGradeToExecute() const;
 		void beSigned(Bureaucrat &bureaucrat);
 };
-		std::ostream &operator<<(std::ostream &o, Form const &rhs);
+std::ostream &operator<<(std::ostream &o, Form const &rhs);
 
 #endif

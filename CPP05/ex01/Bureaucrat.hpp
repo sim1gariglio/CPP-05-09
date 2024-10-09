@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:55:40 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/09 11:21:13 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/09 11:25:15 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ class Bureaucrat
 		void decrementGrade();
 		void signForm(Form &form);
 };
-		std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs);
+std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs);
 
 #endif
