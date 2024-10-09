@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 11:52:25 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/09 11:19:55 by sgarigli         ###   ########.fr       */
+/*   Created: 2024/10/09 11:05:28 by sgarigli          #+#    #+#             */
+/*   Updated: 2024/10/09 11:13:12 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 # include <iostream>
 # include <string>
 # include "Bureaucrat.hpp"
 
-class Form
+class AForm
 {
 	private:
 		std::string const _name;
@@ -41,17 +41,18 @@ class Form
 					return ("Grade is too low");
 				}
 		};
-		Form();
-		Form(std::string name, int gradeToSign, int gradeToExecute);
-		Form(Form const & src);
-		Form &operator=(Form const & rhs);
-		~Form();
+		AForm();
+		AForm(std::string name, int gradeToSign, int gradeToExecute);
+		AForm(AForm const & src);
+		AForm &operator=(AForm const & rhs);
+		~AForm();
 		std::string getName() const;
 		bool getSigned() const;
 		int getGradeToSign() const;
 		int getGradeToExecute() const;
 		void beSigned(Bureaucrat &bureaucrat);
+
+		std::ostream &operator<<(std::ostream &o, AForm const &rhs);
 };
-		std::ostream &operator<<(std::ostream &o, Form const &rhs);
 
 #endif
