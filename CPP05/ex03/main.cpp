@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 11:55:19 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/10 12:02:26 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/15 09:32:41 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "Colors.hpp"
+#include "Intern.hpp"
 
 int main()
 {
@@ -52,9 +53,23 @@ int main()
         lmicheli.signForm(formC);
         gduranti.signForm(formC);
 
-		sgarigli.executeForm(formA);
-		mruggier.executeForm(formB);
-		lmicheli.executeForm(formC);
+		Intern intern;
+
+		AForm *formD = intern.makeForm("presidential pardon", "sgarigli");
+		AForm *formE = intern.makeForm("robotomy request", "mruggier");
+		AForm *formF = intern.makeForm("shrubbery creation", "lmicheli");
+		
+		sgarigli.signForm(*formD);
+		mruggier.signForm(*formE);
+		lmicheli.signForm(*formE);
+		gduranti.signForm(*formF);
+
+		sgarigli.executeForm(*formD);
+		mruggier.executeForm(*formE);
+		lmicheli.executeForm(*formF);
+		gduranti.executeForm(*formF);
+
+
     }
     catch (const std::exception &e)
     {

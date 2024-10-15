@@ -6,11 +6,12 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:57:33 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/08 12:42:00 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:48:04 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Colors.hpp"
 
 Form::Form() : _name("default"), _signed(false), _gradeToSign(150), _gradeToExecute(150)
 {
@@ -65,11 +66,17 @@ void Form::beSigned(Bureaucrat &bureaucrat)
 {
 	if (bureaucrat.getGrade() > _gradeToSign)
 		throw Form::GradeTooLowException();
+	if (_signed)
+		throw Form::FormAlreadySignedException();
 	_signed = true;
 }
 
 std::ostream &operator<<(std::ostream &o, Form const &rhs)
 {
-	o << rhs.getName() << ", form grade to sign " << rhs.getGradeToSign() << ", form grade to execute " << rhs.getGradeToExecute() << std::endl;
+	o << RESET << rhs.getName() << " << form grade to sign " << rhs.getGradeToSign() << ", form grade to execute " << rhs.getGradeToExecute() << ", ";
+	if (rhs.getSigned())
+		o << GREEN << "signed " << RESET << ">>" <<std::endl;
+	else
+		o << RED << "not signed " << RESET << ">>" <<std::endl;
 	return o;
 }

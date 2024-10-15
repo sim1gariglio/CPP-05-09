@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 11:52:25 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/10 11:40:23 by sgarigli         ###   ########.fr       */
+/*   Created: 2024/10/07 11:55:40 by sgarigli          #+#    #+#             */
+/*   Updated: 2024/10/09 11:41:03 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
-# include <iostream>
-# include <string>
-# include "Bureaucrat.hpp"
+#include <iostream>
+#include <string>
 
-class Form
+class AForm;
+
+class Bureaucrat
 {
 	private:
 		std::string const _name;
-		bool _signed;
-		int const _gradeToSign;
-		int const _gradeToExecute;
+		int _grade;
 	public:
+		Bureaucrat();
+		Bureaucrat(std::string name, int grade);
+		Bureaucrat(Bureaucrat const & src);
+		Bureaucrat &operator=(Bureaucrat const & rhs);
+		~Bureaucrat();
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -41,27 +45,13 @@ class Form
 					return ("Grade is too low");
 				}
 		};
-		
-		class FormAlreadySignedException : public std::exception
-		{
-			public:
-				virtual const char* what() const throw()
-				{
-					return ("Form is already signed");
-				}
-		};
-		
-		Form();
-		Form(std::string name, int gradeToSign, int gradeToExecute);
-		Form(Form const & src);
-		Form &operator=(Form const & rhs);
-		~Form();
 		std::string getName() const;
-		bool getSigned() const;
-		int getGradeToSign() const;
-		int getGradeToExecute() const;
-		void beSigned(Bureaucrat &bureaucrat);
+		int getGrade() const;
+		void incrementGrade();
+		void decrementGrade();
+		void signForm(AForm &form);
+		void executeForm(AForm const &form);
 };
-std::ostream &operator<<(std::ostream &o, Form const &rhs);
+std::ostream &operator<<(std::ostream &o, Bureaucrat const &rhs);
 
 #endif
