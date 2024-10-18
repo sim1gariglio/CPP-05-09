@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:22:55 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/16 11:57:26 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/18 10:21:49 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@ Bureaucrat::Bureaucrat()
 {
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const & src)
+Bureaucrat::Bureaucrat(Bureaucrat const & src) : _name(src._name), _grade(src._grade)
 {
-	*this = src;
 }
 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const & rhs)
 {
 	if (this != &rhs)
 	{
-		this->_grade = rhs._grade;
+		*this = Bureaucrat(rhs);
 	}
 	return *this;
 }

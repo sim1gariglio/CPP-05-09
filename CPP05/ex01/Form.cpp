@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:57:33 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/10 11:48:04 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/18 10:27:09 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Form &Form::operator=(Form const & rhs)
 {
 	if (this != &rhs)
 	{
-		_signed = rhs._signed;
+		*this = Form(rhs);
 	}
 	return (*this);
 }

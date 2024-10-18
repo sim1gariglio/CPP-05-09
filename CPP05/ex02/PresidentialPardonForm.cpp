@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:30:55 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/10 12:08:34 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/18 10:29:30 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("Pres
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src) : AForm(src)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src) : AForm(src) , _target(src._target)
 {
 }
 
