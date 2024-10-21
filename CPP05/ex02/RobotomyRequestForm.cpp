@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:30:57 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/10 12:08:40 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:21:40 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const & 
 {
 	if (this != &rhs)
 	{
-		AForm::operator=(rhs);
+		*this = RobotomyRequestForm(rhs);
 	}
 	return (*this);
 }

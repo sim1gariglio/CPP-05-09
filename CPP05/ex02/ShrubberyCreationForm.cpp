@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:31:02 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/10 12:08:45 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:21:55 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 {
 	if (this != &rhs)
 	{
-		AForm::operator=(rhs);
+		*this = ShrubberyCreationForm(rhs);
 	}
 	return (*this);
 }
