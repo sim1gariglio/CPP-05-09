@@ -6,11 +6,11 @@
 #    By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 11:49:59 by sgarigli          #+#    #+#              #
-#    Updated: 2024/10/28 15:12:26 by sgarigli         ###   ########.fr        #
+#    Updated: 2024/10/28 15:28:49 by sgarigli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Templates
+NAME = Iter
 
 CC = c++
 

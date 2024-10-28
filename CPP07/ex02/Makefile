@@ -6,17 +6,17 @@
 #    By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/07 11:49:59 by sgarigli          #+#    #+#              #
-#    Updated: 2024/10/28 15:12:26 by sgarigli         ###   ########.fr        #
+#    Updated: 2024/10/28 15:38:20 by sgarigli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Templates
+NAME = Array
 
 CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp
+SRCS = main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -1,17 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 12:22:00 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/28 12:22:04 by sgarigli         ###   ########.fr       */
+/*   Created: 2024/10/28 15:08:49 by sgarigli          #+#    #+#             */
+/*   Updated: 2024/10/28 15:23:12 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
+#ifndef ITER_HPP
+#define ITER_HPP
 
-Base::~Base()
+#include <iostream>
+
+template <typename T, typename F>
+void iter(T *array, size_t len, F f)
 {
+    for (size_t i = 0; i < len; i++)
+    {
+        f(array[i]);
+    }
 }
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:09:02 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/15 12:09:03 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/28 11:08:54 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,13 @@
 #include <string>
 #include <cmath>
 #include <stdint.h>
-#include "Data.hpp"
 
-struct Data;
+struct Data
+{
+	std::string s1;
+	int n;
+	std::string s2;
+};
 
 class Serializer
 {

@@ -5,32 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 10:18:15 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/28 11:41:10 by sgarigli         ###   ########.fr       */
+/*   Created: 2024/10/28 15:06:19 by sgarigli          #+#    #+#             */
+/*   Updated: 2024/10/28 15:16:12 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Func.hpp"
+#include <iostream>
+#include "whatever.hpp"
 
-int main(void)
+int main( void )
 {
-	Base *base = generate();
-	Base *base2 = generate();
-	Base *base3 = generate();
-	Base *base4 = NULL;
-	Base &ref = *base;
-	std::cout << "ref " << std::endl;
-	identify(ref);
-	std::cout << "pointer " << std::endl;
-	identify(base);
-	identify(*base);
-	identify(base2);
-	identify(*base2);
-	identify(base3);
-	identify(*base3);
-	identify(base4);
-	delete base;
-	delete base2;
-	delete base3;
-	return 0;
+	int a = 2;
+	int b = 3;
+	::swap( a, b );
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min(a, b) = " << ::min( a, b ) << std::endl;
+	std::cout << "max(a, b) = " << ::max( a, b ) << std::endl;
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+	::swap(c, d);
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min(c, d) = " << ::min( c, d ) << std::endl;
+	std::cout << "max(c, d) = " << ::max( c, d ) << std::endl;
+return 0;
 }

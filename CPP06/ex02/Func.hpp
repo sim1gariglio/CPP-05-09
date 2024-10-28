@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   Func.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 12:08:48 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/15 12:08:49 by sgarigli         ###   ########.fr       */
+/*   Created: 2024/10/27 10:54:16 by sgarigli          #+#    #+#             */
+/*   Updated: 2024/10/28 11:41:10 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Data_HPP
-#define Data_HPP
+#ifndef FUNC_HPP
+#define FUNC_HPP
 
-#include <iostream>
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
+#include <cstdlib>
+#include <tr1/random>
 
-struct Data
+void init_rand(void);
+
+class InitRandCaller
 {
-    int value;
+public:
+	InitRandCaller()
+	{
+		init_rand();
+	}
 };
+
+Base *generate(void);
+void identify(Base *p);
+void identify(Base &p);
 
 #endif
