@@ -6,9 +6,12 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 12:07:01 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/29 12:08:09 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/10/29 12:26:20 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef MUTANTSTACK_TPP
+#define MUTANTSTACK_TPP
 
 #include "MutantStack.hpp"
 
@@ -87,3 +90,5 @@ typename std::stack<T>::container_type::const_reverse_iterator MutantStack<T>::r
 {
     return std::stack<T>::c.rend();
 }
+
+#endif // MUTANTSTACK_TPP

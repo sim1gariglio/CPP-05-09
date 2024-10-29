@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/29 12:24:44 by sgarigli          #+#    #+#             */
+/*   Updated: 2024/10/29 12:25:37 by sgarigli         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
-
-#include <stack>
-#include <iterator>
+	
+# include <stack>
+# include <iterator>
 
 template <typename T>
 class MutantStack : public std::stack<T>
