@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:21:15 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/29 11:03:43 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/11/04 10:28:00 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,19 @@ void printChar(std::string str) {
 		std::cout << "char: '" << static_cast<char>(d) << "'"<< std::endl;
 }
 
+/**
+ * The function follows these steps:
+ * 1. Checks if the input string is empty.
+ * 2. Checks if the input string is a single character.
+ * 3. Initializes flags for detecting double and negative numbers.
+ * 4. Iterates through the string to analyze its content:
+ *    - Checks for a decimal point to identify floating-point numbers.
+ *    - Counts the precision for floating-point numbers.
+ *    - Breaks the loop if a non-numeric character is found.
+ * 5. Checks for the 'f' character to identify float types.
+ * 6. Validates the input string based on its length and content.
+ * 7. Returns the appropriate type based on the analysis.
+ */
 int inputAnalyze(std::string str, int *precision) {
 	if (str.empty())
 		return (-1);

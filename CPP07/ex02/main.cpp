@@ -6,7 +6,7 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:37:01 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/10/28 15:51:36 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/11/05 11:52:44 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <cstdlib>
 #include <ctime>
 
-#define MAX_VAL 10
+#define MAX_VAL 750
 
 int main()
 {

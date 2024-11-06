@@ -1,45 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 15:31:24 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/11/05 11:29:18 by sgarigli         ###   ########.fr       */
+/*   Created: 2024/11/06 10:37:07 by sgarigli          #+#    #+#             */
+/*   Updated: 2024/11/06 12:03:43 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-#define ARRAY_HPP
-
+#include "BitcoinExchange.hpp"
 #include <iostream>
 
-template <typename T>
-class Array
+int main(int argc, char **argv)
 {
+    if (argc != 2)
+    {
+        std::cerr << "Usage: ./btc [input_filename]" << std::endl;
+        return 1;
+    }
 
-private:
-	T *_array;
-	unsigned int _size;
+    BitcoinExchange exchange;
+    exchange.readDatabase();
+    exchange.processInput(argv[1]);
 
-public:
-	Array();
-	Array(unsigned int n);
-	Array(Array const &src);
-	~Array();
+    return 0;
+}
 
-	Array &operator=(Array const &src);
-	T &operator[](unsigned int i);
-
-	unsigned int size() const;
-	class OutOfBounds : public std::exception
-	{
-	public:
-		virtual const char *what() const throw();
-	};
-};
-
-#include "Array.tpp"
-
-#endif
