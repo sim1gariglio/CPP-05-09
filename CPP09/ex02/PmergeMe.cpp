@@ -6,29 +6,29 @@
 /*   By: sgarigli <sgarigli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:34:47 by sgarigli          #+#    #+#             */
-/*   Updated: 2024/11/07 11:53:02 by sgarigli         ###   ########.fr       */
+/*   Updated: 2024/11/11 11:36:25 by sgarigli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-SortDeez::SortDeez(char **av)
+Sorting::Sorting(char **av)
 {
 	parse(av);
 	sort();
 	// print();
 }
 
-SortDeez::SortDeez(SortDeez const &copy)
+Sorting::Sorting(Sorting const &copy)
 {
 	*this = copy;
 }
 
-SortDeez::~SortDeez(void)
+Sorting::~Sorting(void)
 {
 }
 
-SortDeez &SortDeez::operator=(SortDeez const &copy)
+Sorting &Sorting::operator=(Sorting const &copy)
 {
 	if (this != &copy)
 	{
@@ -38,7 +38,7 @@ SortDeez &SortDeez::operator=(SortDeez const &copy)
 	return *this;
 }
 
-bool SortDeez::isInt(std::string str)
+bool Sorting::isInt(std::string str)
 {
 	std::istringstream iss(str);
 	int f;
@@ -52,7 +52,7 @@ bool SortDeez::isInt(std::string str)
 	return true;
 }
 
-void SortDeez::parse(char **av)
+void Sorting::parse(char **av)
 {
 	for (int i = 0; av[i]; i++)
 	{
@@ -108,37 +108,37 @@ void mergeSort(std::vector<T> &vec, unsigned int left, unsigned int right)
 template <typename T>
 std::list<T> mergeList(typename std::list<T>::iterator startLeft, typename std::list<T>::iterator middle, typename std::list<T>::iterator endRight)
 {
-    std::list<T> result;
-    typename std::list<T>::iterator left = startLeft;
-    typename std::list<T>::iterator right = middle;
+	std::list<T> result;
+	typename std::list<T>::iterator left = startLeft;
+	typename std::list<T>::iterator right = middle;
 
-    while (left != middle && right != endRight)
-    {
-        if (*left < *right)
-        {
-            result.push_back(*left);
-            ++left;
-        }
-        else
-        {
-            result.push_back(*right);
-            ++right;
-        }
-    }
+	while (left != middle && right != endRight)
+	{
+		if (*left < *right)
+		{
+			result.push_back(*left);
+			++left;
+		}
+		else
+		{
+			result.push_back(*right);
+			++right;
+		}
+	}
 
-    while (left != middle)
-    {
-        result.push_back(*left);
-        ++left;
-    }
+	while (left != middle)
+	{
+		result.push_back(*left);
+		++left;
+	}
 
-    while (right != endRight)
-    {
-        result.push_back(*right);
-        ++right;
-    }
+	while (right != endRight)
+	{
+		result.push_back(*right);
+		++right;
+	}
 
-    return result;
+	return result;
 }
 
 template <typename T>
@@ -154,7 +154,7 @@ void mergesort(std::list<T> &list, typename std::list<T>::iterator start, typena
 		std::copy(result.begin(), result.end(), start);
 	}
 }
-void SortDeez::sort(void)
+void Sorting::sort(void)
 {
 	std::cout << "Numbers: ";
 	for (size_t i = 0; i < m_vector.size(); i++)
@@ -182,7 +182,7 @@ void SortDeez::sort(void)
 	}
 	clock_t end_l = clock();
 	clock_t start_v = clock();
-		
+
 	mergeSort(m_vector, 0, m_vector.size() - 1);
 	if (OddOne != -1)
 	{
